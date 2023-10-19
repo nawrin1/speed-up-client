@@ -36,6 +36,7 @@ const Details = () => {
                     </div>
 
                     <p className="text-xl font-medium text-justify font-Oxanium mt-12">{description}</p>
+                    <button className="btn btn-success">Add to Cart</button>
 
                 </div>
             </div>
