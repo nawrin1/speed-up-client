@@ -1,0 +1,38 @@
+[
+    {
+      "brandName": "Toyota",
+      "image1": "https://i.ibb.co/PxG9PHb/corolla-ogi.webp",
+      "image2": "https://i.ibb.co/kg6YjDV/highlander.jpg",
+      "image3": "https://i.ibb.co/9pG3Wxc/camry.webp"
+    },
+    {
+      "brandName": "Ford",
+      "image1": "https://i.ibb.co/zNhDYxM/eco.jpg",
+      "image2": "https://i.ibb.co/Hxp1c1q/edge.jpg",
+      "image3": "https://i.ibb.co/hLWrkK8/expedition.webp"
+    },
+    {
+      "brandName": "BMW",
+      "image1": "https://i.ibb.co/3dJVkpD/luka-tsikolia-ZLyzbhrfj-MY-unsplash.jpg",
+      "image2": "https://i.ibb.co/ck1FmP8/jakob-rosen-Db-e-Cl-K4v-E-unsplash.jpg",
+      "image3": "https://i.ibb.co/Jn3QQWJ/bmw-x5.jpg"
+    },
+    {
+      "brandName": "Mercedes-Benz",
+      "image1": "https://i.ibb.co/4sPVpXJ/c-class-2.jpg",
+      "image2": "https://i.ibb.co/XX9HDgX/gla.jpg",
+      "image3": "https://i.ibb.co/F8zB8Q0/gle.jpg"
+    },
+    {
+      "brandName": "Tesla",
+      "image1": "https://i.ibb.co/2s9WBZK/tesla.jpg",
+      "image2": "https://i.ibb.co/98Wt8H7/toyo.jpg",
+      "image3": "https://i.ibb.co/98Wt8H7/toyo.jpg"
+    },
+    {
+      "brandName": "Honda",
+      "image1": "https://i.ibb.co/VT32gZS/honda-city.jpg",
+      "image2": "https://i.ibb.co/pyBBRFd/Insight.jpg",
+      "image3": "https://i.ibb.co/YTJFh2M/civic.webp"
+    }
+]

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import AllCars from "../AllCars/AllCars";
+import Carousel from "../../Carousel/Carousel";
 
 
 const Car = () => {
     const {brandName}=useParams()
+    const [picture,setPicture]=useState([])
     
     // const data=useLoaderData()
     // console.log(data)
@@ -19,16 +21,40 @@ const Car = () => {
     setCars(allCars)})
         
     },[brandName])
+    
+
+
+    useEffect(()=>{
+        fetch('/advertise.json')
+        .then(res=>res.json())
+        .then(data=>{
+            const carData=data.filter(datas=>datas.brandName==brandName)
+            setPicture(carData)
+
+        })
+    },[brandName])
+    console.log(picture)
 
     
     return (
-        <div>
-            {
-                cars.map(car=><AllCars car={car}></AllCars>)
-            }
+        
+        
+                   cars.length>0?
+                   <>
+                   <Carousel picture={picture}></Carousel>
+                   <div className="flex-col gap-6 max-w-6xl mx-auto mb-52 mt-20">
+                    {
+                        cars.map(car=><AllCars car={car}></AllCars>)
+                    }
+                    </div>  
+                    </>
+                    :
+                    <p className="text-center font-Oxanium font-extrabold text-6xl items-center">No Cars Available...</p>
+            
+        
 
             
-        </div>
+       
     );
 };
 
