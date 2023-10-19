@@ -1,0 +1,6 @@
+.header{
+    /* background: rgb(75,71,138);
+    background: linear-gradient(90deg, rgba(75,71,138,1) 0%, rgba(167,167,209,1) 57%, rgba(224,241,245,1) 94%); */
+    background: rgb(224,241,245);
+    background: linear-gradient(90deg, rgba(224,241,245,1) 7%, rgba(167,167,209,1) 57%, rgba(56,81,115,1) 100%);
+}
