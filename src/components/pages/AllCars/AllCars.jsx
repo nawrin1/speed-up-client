@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
 
 
 const AllCars = ({car}) => {
-    const{brandName,image,name,price,type,rating}=car
-    console.log(brandName)
+    const{brandName,image,name,price,type,rating,_id}=car
+    console.log(_id)
+    const handleDetails=_id=>{
+        fetch(`http://localhost:5000/allcars/${_id}`,{
+            method:'GET',
+            "content-type":'application/json'
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
+    }
+    
     return (
         <div className="flex flex-col md:flex-row lg:flex-row gap-6  mt-8 rounded-2xl place-items-center shadow-2xl shadow-slate-400 hover:bg-stone-200 hover:border-2 hover:border-orange-800 hover:shadow-slate-700 ">
             <div>
@@ -17,7 +27,7 @@ const AllCars = ({car}) => {
                 <h2>Price: {price} dollar</h2>
                 <h2>Rating: {rating}</h2>
                 <div className="flex mt-6 gap-24">
-                    <div><button className="btn btn-info">Details</button></div>
+                    <Link to={`/details/${_id}`}><div><button className="btn btn-info " onClick={()=>handleDetails(_id)}>Details</button></div></Link>
                     <div><button className="btn btn-success">Update</button></div>
                 </div>
 

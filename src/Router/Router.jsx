@@ -9,6 +9,7 @@ import Login from "../components/pages/Login/Login";
 import Register from "../components/pages/Register/Register";
 import AddProducts from "../components/pages/AddProducts/AddProducts";
 import Car from "../components/pages/Car/Car";
+import Details from "../components/pages/Details/Details";
 
   const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ import Car from "../components/pages/Car/Car";
             path:'/allcars/:brandName',
             element:<Car></Car>,
             // loader:()=>fetch(`http://localhost:5000/allcars`)
+        },{
+            path:'/details/:id',
+            element:<Details></Details>,
+            loader:({params})=>fetch(`http://localhost:5000/allcars/${params.id}`)
         }
       ]
     },
