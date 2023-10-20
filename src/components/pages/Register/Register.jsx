@@ -45,7 +45,7 @@ const Register = () => {
                     displayName:name,
                     photoURL:photo
                 })
-                fetch('http://localhost:5000/allusers',{
+                fetch('http://localhost:3000/allusers',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'

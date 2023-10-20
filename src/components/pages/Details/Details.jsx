@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Details = () => {
+    const{user}=useContext(AuthContext)
     
     const data=useLoaderData()
     console.log(data)
+    const userData=user.email
+    
     const {brandName,name,image,description,type}=data
     // console.log(name)
     // const [cars,setCars]=useState([])
@@ -20,9 +24,9 @@ const Details = () => {
         
     // },[name])
     // console.log(cars)
-    const car={name,image,type,brandName}
+    const car={name,image,type,brandName,userData}
     const addCart=()=>{
-        fetch('http://localhost:5000/addCart',{
+        fetch('http://localhost:3000/addCart',{
             method:'POST',
             headers:{
                 "content-type":"application/json"

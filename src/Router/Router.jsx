@@ -12,6 +12,7 @@ import Car from "../components/pages/Car/Car";
 import Details from "../components/pages/Details/Details";
 import PrivateRoute from "../routes/PrivateRoute";
 import MyCart from "../components/pages/MyCart/Mycart";
+import Update from "../components/pages/Update/Update";
 
   const router = createBrowserRouter([
     {
@@ -38,11 +39,15 @@ import MyCart from "../components/pages/MyCart/Mycart";
         },{
             path:'/details/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/allcars/${params.id}`)
+            loader:({params})=>fetch(`http://localhost:3000/allcars/${params.id}`)
         },{
           path:'/cart',
           element:<MyCart></MyCart>,
-          loader:()=>fetch('http://localhost:5000/addCart')
+          loader:()=>fetch('http://localhost:3000/addCart')
+        },{
+          path:'/update/:id',
+          element:<PrivateRoute><Update></Update></PrivateRoute>,
+          loader:({params})=>fetch(`http://localhost:3000/allcars/${params.id}`)
         }
       ]
     },

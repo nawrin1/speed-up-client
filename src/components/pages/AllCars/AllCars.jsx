@@ -5,7 +5,7 @@ const AllCars = ({car}) => {
     const{brandName,image,name,price,type,rating,_id}=car
     console.log(_id)
     const handleDetails=_id=>{
-        fetch(`http://localhost:5000/allcars/${_id}`,{
+        fetch(`http://localhost:3000/allcars/${_id}`,{
             method:'GET',
             "content-type":'application/json'
         })
@@ -28,7 +28,7 @@ const AllCars = ({car}) => {
                 <h2>Rating: {rating}</h2>
                 <div className="flex mt-6 gap-24">
                     <Link to={`/details/${_id}`}><div><button className="btn btn-info " onClick={()=>handleDetails(_id)}>Details</button></div></Link>
-                    <div><button className="btn btn-success">Update</button></div>
+                    <Link to={`/update/${_id}`}><div><button className="btn btn-success">Update</button></div></Link>
                 </div>
 
             </div>
