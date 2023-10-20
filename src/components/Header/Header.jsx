@@ -3,6 +3,7 @@ import {SiSpeedypage} from 'react-icons/si';
 import './Header.css'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Header = () => {

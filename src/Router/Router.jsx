@@ -10,6 +10,7 @@ import Register from "../components/pages/Register/Register";
 import AddProducts from "../components/pages/AddProducts/AddProducts";
 import Car from "../components/pages/Car/Car";
 import Details from "../components/pages/Details/Details";
+import PrivateRoute from "../routes/PrivateRoute";
 
   const router = createBrowserRouter([
     {
@@ -28,14 +29,14 @@ import Details from "../components/pages/Details/Details";
             element:<Register></Register>
         },{
             path:'/add',
-            element:<AddProducts></AddProducts>
+            element:<PrivateRoute><AddProducts></AddProducts></PrivateRoute>
         },{
             path:'/allcars/:brandName',
             element:<Car></Car>,
             // loader:()=>fetch(`http://localhost:5000/allcars`)
         },{
             path:'/details/:id',
-            element:<Details></Details>,
+            element:<PrivateRoute><Details></Details></PrivateRoute>,
             loader:({params})=>fetch(`http://localhost:5000/allcars/${params.id}`)
         }
       ]

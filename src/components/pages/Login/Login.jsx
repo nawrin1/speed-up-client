@@ -1,11 +1,12 @@
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 const Login = () => {
     const{login,googleSignIn}=useContext(AuthContext)
+    const location=useLocation()
     
     const navigate=useNavigate()
     const handleLogin=e=>{
@@ -25,7 +26,7 @@ const Login = () => {
             })
             
             
-            navigate("/")
+            navigate(location?.state? location.state:'/')
 
             
             
@@ -53,7 +54,7 @@ const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
             })
-            navigate('/')
+            navigate(location?.state? location.state:'/')
         })
         .catch(error=>{
             Swal.fire({
