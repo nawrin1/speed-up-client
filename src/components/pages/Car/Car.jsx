@@ -42,7 +42,7 @@ const Car = () => {
                    cars.length>0?
                    <>
                    <Carousel picture={picture}></Carousel>
-                   <div className="flex-col gap-6 max-w-6xl mx-auto mb-52 mt-20">
+                   <div className="flex-col gap-6 max-w-6xl mx-auto mb-52 mt-20 ">
                     {
                         cars.map(car=><AllCars car={car}></AllCars>)
                     }

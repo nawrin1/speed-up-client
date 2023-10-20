@@ -1,9 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import {SiSpeedypage} from 'react-icons/si';
 import './Header.css'
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Header = () => {
+    const {user,logOut}=useContext(AuthContext)
+    const navigate=useNavigate()
     const links=<>
       <li className="font-Oxanium font-semibold text-xl"><NavLink to='/'>Home</NavLink></li>
       <li className="font-Oxanium font-semibold text-xl"><NavLink to='/add'>Add Products</NavLink></li>
@@ -11,6 +15,22 @@ const Header = () => {
       
       
     </>
+    const handleLogOut=()=>{
+        logOut()
+        .then(() => {
+       
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your have logged out',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            navigate('/')
+        })
+        .catch(error => console.error (error))
+    }
+
     return (
         <div className="navbar header bg-slate-200 rounded-3xl mb-7 max-w-6xl mx-auto">
             <div className="navbar-start">
@@ -30,8 +50,22 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-4">
-                <Link to='/login'><button className="btn font-Oxanium font-semibold text-[14px] lg:text-xl md:text-xl">Login</button></Link>
-                <Link to='register'><button className="btn font-Oxanium font-semibold text-[14px] lg:text-xl md:text-xl">Register</button></Link>
+            {user?<><h2 className="focus-visible:">{`${user.displayName}`}</h2>
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+
+                    <div className="w-10 rounded-full">
+                        <img src={user.photoURL} />
+                    </div>
+                    </label>
+                    <Link to='/login'><button onClick={handleLogOut} className="font-Kanit">Logout</button></Link>
+
+                    </>:
+            <>
+                                <Link to='/login'><button className="btn font-Oxanium font-semibold text-[14px] lg:text-xl md:text-xl">Login</button></Link>
+                
+                            <Link to='register'><button className="btn font-Oxanium font-semibold text-[14px] lg:text-xl md:text-xl">Register</button></Link>
+            </>
+            }
             </div>
         </div>
     );

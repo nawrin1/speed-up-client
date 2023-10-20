@@ -6,7 +6,7 @@ import Header from "../Header/Header";
 
 const Root = () => {
     return (
-        <div>
+        <div className="">
            
              <div className="">
                 <Header></Header>
