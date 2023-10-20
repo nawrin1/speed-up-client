@@ -14,7 +14,7 @@ const MyCart = () => {
     
     console.log(data)
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 place-content-center place-items-center gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 place-content-center place-items-center gap-6 mb-20 mt-10">
             {
                 product?.map((datas,idx)=><Product key={idx} datas={datas} product={product} setProduct={setProduct}></Product>)
             }

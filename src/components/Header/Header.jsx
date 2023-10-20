@@ -64,7 +64,7 @@ const Header = () => {
             <>
                                 <Link to='/login'><button className="btn font-Oxanium font-semibold text-[14px] lg:text-xl md:text-xl">Login</button></Link>
                 
-                            <Link to='register'><button className="btn font-Oxanium font-semibold text-[14px] lg:text-xl md:text-xl">Register</button></Link>
+                            {/* <Link to='register'><button className="btn font-Oxanium font-semibold text-[14px] lg:text-xl md:text-xl">Register</button></Link> */}
             </>
             }
             </div>

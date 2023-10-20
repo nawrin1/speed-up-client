@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const Update = () => {
     const load=useLoaderData()
-    const{image,name,brandName,type,price,description,rating,_id}=load
+    const{image,name,brandName,type,price,rating,_id}=load
     console.log(load)
     const handleUpdate=e=>{
         e.preventDefault()
@@ -12,7 +12,7 @@ const Update = () => {
         const brandName=e.target.brandName.value
         const type=e.target.carType.value
         const price=e.target.price.value
-        const description=e.target.description.value
+        
         const rating=e.target.rating.value
         const updated = {image,name,brandName,type,price,rating}
         fetch(`http://localhost:4000/allcars/${_id}`, {
@@ -44,6 +44,7 @@ const Update = () => {
         <div className="hero-content text-center text-neutral-content">
           <div className="">
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-slate-700">
+            <h2 className='text-center text-4xl font-semibold'>Update Products</h2>
             <form className="card-body " onSubmit={handleUpdate}>
                 <div className="flex flex-col lg:flex-row md:flex-row gap-6">
                 <div className="form-control">
@@ -88,13 +89,7 @@ const Update = () => {
                 <input type="text" name="price" defaultValue={price} placeholder="Price" className="input input-bordered text-black" required />
 
                 </div>
-                <div className="form-control">
-                <label className="label">
-                    <span className="label-text text-xl text-white">Short Description</span>
-                </label>
-                <textarea name="description" defaultValue={description} id="" cols="30" rows="5" className="text-black"></textarea>
-
-                </div>
+                
                 <div className="form-control">
                 <label className="label">
                     <span className="label-text text-xl text-white">Rating</span>

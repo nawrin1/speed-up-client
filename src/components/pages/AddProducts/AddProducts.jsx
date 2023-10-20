@@ -31,7 +31,7 @@ const AddProducts = () => {
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'You have added succefully',
+                title: 'You have added successfully',
                 showConfirmButton: false,
                 timer: 1500
               })
@@ -47,6 +47,7 @@ const AddProducts = () => {
         <div className="hero-content text-center text-neutral-content">
           <div className="">
             <div className="card flex-shrink-0 w-full  shadow-2xl bg-slate-700">
+                <h2 className='text-center text-4xl font-semibold'>Add Products</h2>
             <form className="card-body " onSubmit={handleSubmit}>
                 <div className="flex flex-col lg:flex-row md:flex-row gap-6">
                 <div className="form-control">
@@ -59,7 +60,7 @@ const AddProducts = () => {
                 <label className="label">
                     <span className="label-text text-xl text-white">Name</span>
                 </label>
-                <input type="text" name="name" placeholder="text" className="input input-bordered text-black" required />
+                <input type="text" name="name" placeholder="name" className="input input-bordered text-black" required />
 
                 </div>
 
