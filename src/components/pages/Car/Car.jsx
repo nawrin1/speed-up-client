@@ -14,7 +14,7 @@ const Car = () => {
     // console.log(data)
     const [cars,setCars]=useState([])
     useEffect(()=>{
-        fetch('https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars')
+        fetch('https://brand-shop-server-npgvtcy0p-jannatul-ferdous-nawrins-projects.vercel.app/allcars')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

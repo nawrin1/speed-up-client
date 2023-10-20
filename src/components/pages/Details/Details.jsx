@@ -26,7 +26,7 @@ const Details = () => {
     // console.log(cars)
     const car={name,image,type,brandName,userData}
     const addCart=()=>{
-        fetch('https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/addCart',{
+        fetch('https://brand-shop-server-npgvtcy0p-jannatul-ferdous-nawrins-projects.vercel.app/addCart',{
             method:'POST',
             headers:{
                 "content-type":"application/json"

@@ -45,7 +45,7 @@ const Register = () => {
                     displayName:name,
                     photoURL:photo
                 })
-                fetch('https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allusers',{
+                fetch('https://brand-shop-server-npgvtcy0p-jannatul-ferdous-nawrins-projects.vercel.app/allusers',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'

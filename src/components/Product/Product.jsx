@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 const Product = ({datas,setProduct,product}) => {
     const{name,image,brandName,type,_id}=datas
     const handleDelete=_id=>{
-        fetch(`https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/addCart/${_id}`, {
+        fetch(`https://brand-shop-server-npgvtcy0p-jannatul-ferdous-nawrins-projects.vercel.app/addCart/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

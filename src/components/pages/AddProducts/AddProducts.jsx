@@ -17,7 +17,7 @@ const AddProducts = () => {
         
         console.log(cars)
        
-        fetch("https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars",{
+        fetch("https://brand-shop-server-npgvtcy0p-jannatul-ferdous-nawrins-projects.vercel.app/allcars",{
             method:"POST",
             headers:{
                 "content-type":"application/json"
