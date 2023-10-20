@@ -11,6 +11,7 @@ import AddProducts from "../components/pages/AddProducts/AddProducts";
 import Car from "../components/pages/Car/Car";
 import Details from "../components/pages/Details/Details";
 import PrivateRoute from "../routes/PrivateRoute";
+import MyCart from "../components/pages/MyCart/Mycart";
 
   const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ import PrivateRoute from "../routes/PrivateRoute";
             path:'/details/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
             loader:({params})=>fetch(`http://localhost:5000/allcars/${params.id}`)
+        },{
+          path:'/cart',
+          element:<MyCart></MyCart>,
+          loader:()=>fetch('http://localhost:5000/addCart')
         }
       ]
     },

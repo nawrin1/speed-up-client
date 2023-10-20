@@ -50,7 +50,7 @@ const Header = () => {
                    {links}
                 </ul>
             </div>
-            <div className="navbar-end gap-4">
+            <div className="navbar-end gap-4 flex flex-col lg:flex-row md:flex-row">
             {user?<><h2 className="focus-visible:">{`${user.displayName}`}</h2>
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 

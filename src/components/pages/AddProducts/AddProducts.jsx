@@ -11,6 +11,7 @@ const AddProducts = () => {
         const rating=e.target.rating.value
         const cars={image,name,brandName,type,price,description,rating}
         console.log(cars)
+       
         fetch("http://localhost:5000/allcars",{
             method:"POST",
             headers:{
@@ -18,6 +19,7 @@ const AddProducts = () => {
             },
             body:JSON.stringify(cars)
         })
+        
         .then(res=>res.json())
         .then(data=>{console.log(data)
         if (data.insertedId){

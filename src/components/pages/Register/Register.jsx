@@ -31,6 +31,7 @@ const Register = () => {
         {
             createUser(email,password)
             .then(result=>{
+                const user={email,name,photo}
                 
                  
                 Swal.fire({
@@ -44,6 +45,18 @@ const Register = () => {
                     displayName:name,
                     photoURL:photo
                 })
+                fetch('http://localhost:5000/allusers',{
+                    method:'POST',
+                    headers:{
+                        'content-type':'application/json'
+
+                    },
+                    body:JSON.stringify(user)
+                    
+                })
+                .then(res=>res.json())
+                .then(data=>console.log(data))
+
                 console.log(result)
                 navigate('/')
      
