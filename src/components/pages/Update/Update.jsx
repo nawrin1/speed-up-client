@@ -15,7 +15,7 @@ const Update = () => {
         
         const rating=e.target.rating.value
         const updated = {image,name,brandName,type,price,rating}
-        fetch(`http://localhost:4000/allcars/${_id}`, {
+        fetch(`https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

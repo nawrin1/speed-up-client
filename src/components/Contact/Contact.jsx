@@ -9,8 +9,8 @@ const Contact = () => {
                     <img className='w-[75%] rounded-3xl' src={image1} alt="" />
 
                 </div>
-                <div className='place-items-center justify-center place-content-center ml-20 lg:ml-0  '>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl outline-4 lg:ml-20">
+                <div className='place-items-center justify-center place-content-center ml-14 lg:ml-0  '>
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl outline-4 lg:ml-20 place-self-center justify-center place-content-center items-center">
                     <h2 className='font-medium font-Oxanium text-center text-2xl mt-4'>Get in touch</h2>
                 <form className="card-body">
                     <div className="form-control">

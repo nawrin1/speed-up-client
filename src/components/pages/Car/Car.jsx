@@ -2,23 +2,26 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import AllCars from "../AllCars/AllCars";
 import Carousel from "../../Carousel/Carousel";
+import { BallTriangle } from "react-loader-spinner";
 
 
 const Car = () => {
     const {brandName}=useParams()
     const [picture,setPicture]=useState([])
+    const [loading,setLoading]=useState(true)
     
     // const data=useLoaderData()
     // console.log(data)
     const [cars,setCars]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:4000/allcars')
+        fetch('https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
         const allCars=data?.filter(car=>car.brandName==brandName)
         console.log(allCars)
-    setCars(allCars)})
+        setCars(allCars)
+       setLoading(false)})
         
     },[brandName])
     
@@ -37,9 +40,20 @@ const Car = () => {
 
     
     return (
+                   loading?<div className="pt-[20%] pl-[45%]">
+                    <BallTriangle
+                   height={100}
+                   width={100}
+                   radius={5}
+                   color="#4fa94d"
+                   ariaLabel="ball-triangle-loading"
+                   wrapperClass={{}}
+                   wrapperStyle=""
+                   visible={true}
+               />
+                   </div>:
         
-        
-                   cars.length>0?
+                   (cars.length>0?
                    <>
                    <Carousel picture={picture}></Carousel>
                    <div className="flex-col gap-6 max-w-6xl mx-auto mb-52 mt-20 ">
@@ -49,7 +63,7 @@ const Car = () => {
                     </div>  
                     </>
                     :
-                    <p className="text-center font-Oxanium font-extrabold text-6xl items-center">No Cars Available...</p>
+                    <p className="text-center font-Oxanium font-extrabold text-6xl items-center">No Cars Available...</p>)
             
         
 

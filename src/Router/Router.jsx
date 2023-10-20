@@ -40,15 +40,15 @@ import MyCart from "../components/pages/MyCart/Mycart";
         },{
             path:'/details/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:4000/allcars/${params.id}`)
+            loader:({params})=>fetch(`https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars/${params.id}`)
         },{
           path:'/cart',
           element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-          loader:()=>fetch('http://localhost:4000/addCart')
+          loader:()=>fetch('https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/addCart')
         },{
           path:'/update/:id',
           element:<PrivateRoute><Update></Update></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:4000/allcars/${params.id}`)
+          loader:({params})=>fetch(`https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars/${params.id}`)
         }
       ]
     },

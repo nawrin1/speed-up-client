@@ -6,7 +6,7 @@ const AllCars = ({car}) => {
     const{brandName,image,name,price,type,rating,_id}=car
     console.log(_id)
     const handleDetails=_id=>{
-        fetch(`http://localhost:4000/allcars/${_id}`,{
+        fetch(`https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars/${_id}`,{
             method:'GET',
             "content-type":'application/json'
         })

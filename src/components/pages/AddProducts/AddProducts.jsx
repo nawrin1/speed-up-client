@@ -17,7 +17,7 @@ const AddProducts = () => {
         
         console.log(cars)
        
-        fetch("http://localhost:4000/allcars",{
+        fetch("https://brand-shop-server-5j5lrswjk-jannatul-ferdous-nawrins-projects.vercel.app/allcars",{
             method:"POST",
             headers:{
                 "content-type":"application/json"

@@ -10,7 +10,9 @@ const Root = () => {
            
              <div className="">
                 <Header></Header>
+                <div className="min-h-screen">
                 <Outlet></Outlet>
+                </div>
              </div>
             <Footer></Footer>
             
