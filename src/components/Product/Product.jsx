@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 const Product = ({datas,setProduct,product}) => {
     const{name,image,brandName,type,_id}=datas
     const handleDelete=_id=>{
-        fetch(`http://localhost:3000/addCart/${_id}`, {
+        fetch(`http://localhost:4000/addCart/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

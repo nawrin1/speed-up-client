@@ -26,7 +26,7 @@ const Details = () => {
     // console.log(cars)
     const car={name,image,type,brandName,userData}
     const addCart=()=>{
-        fetch('http://localhost:3000/addCart',{
+        fetch('http://localhost:4000/addCart',{
             method:'POST',
             headers:{
                 "content-type":"application/json"

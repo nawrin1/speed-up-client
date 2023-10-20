@@ -14,8 +14,8 @@ const Update = () => {
         const price=e.target.price.value
         const description=e.target.description.value
         const rating=e.target.rating.value
-        const updated = {image,name,brandName,type,price,description,rating}
-        fetch(`http://localhost:3000/allcars/${_id}`, {
+        const updated = {image,name,brandName,type,price,rating}
+        fetch(`http://localhost:4000/allcars/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -103,7 +103,7 @@ const Update = () => {
 
                 </div>
                 <div className="form-control mt-6">
-                <button className="btn btn-neutral text-xl text-white">UpdateProduct</button>
+                <button className="btn btn-neutral text-xl text-white">Submit</button>
                 </div>
 
                 </div>

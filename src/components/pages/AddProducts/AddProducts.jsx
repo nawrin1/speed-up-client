@@ -17,7 +17,7 @@ const AddProducts = () => {
         
         console.log(cars)
        
-        fetch("http://localhost:3000/allcars",{
+        fetch("http://localhost:4000/allcars",{
             method:"POST",
             headers:{
                 "content-type":"application/json"

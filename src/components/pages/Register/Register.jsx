@@ -21,7 +21,7 @@ const Register = () => {
             Swal.fire({
                 position: 'top-end',
                 icon: 'error',
-                title: 'Your entered wrong password',
+                title: 'Password must include capital letters, special character and atleast 6 length',
                 showConfirmButton: false,
                 timer: 1500
             })
@@ -45,7 +45,7 @@ const Register = () => {
                     displayName:name,
                     photoURL:photo
                 })
-                fetch('http://localhost:3000/allusers',{
+                fetch('http://localhost:4000/allusers',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json'
@@ -63,6 +63,13 @@ const Register = () => {
             })
             .catch(error=>{
                 console.error(error)
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Registration failed',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
             })
         }
 

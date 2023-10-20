@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 
@@ -5,7 +6,7 @@ const AllCars = ({car}) => {
     const{brandName,image,name,price,type,rating,_id}=car
     console.log(_id)
     const handleDetails=_id=>{
-        fetch(`http://localhost:3000/allcars/${_id}`,{
+        fetch(`http://localhost:4000/allcars/${_id}`,{
             method:'GET',
             "content-type":'application/json'
         })

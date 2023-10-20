@@ -12,7 +12,7 @@ const Car = () => {
     // console.log(data)
     const [cars,setCars]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:3000/allcars')
+        fetch('http://localhost:4000/allcars')
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
