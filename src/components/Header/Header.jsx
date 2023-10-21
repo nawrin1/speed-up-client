@@ -62,7 +62,7 @@ const Header = ({setToggle,toggle}) => {
             </div>
             <div className="navbar-end gap-4 flex flex-col lg:flex-row md:flex-row">
             
-            <input type="checkbox" className="toggle" onClick={()=>handleToggle(!toggle)} checked />
+            <input type="checkbox" className="toggle" onClick={()=>handleToggle(!toggle)} />
                         {/* <div onClick={()=>handleToggle(!toggle)}><ToggleButton
              /></div> */}
             {user?<><h2 className="focus-visible:">{`${user.displayName}`}</h2>
