@@ -2,11 +2,12 @@ import { Outlet } from "react-router-dom";
 
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const Root = () => {
     const [toggle,setToggle]=useState(true)
+    // useEffect(()=>{setToggle(toggle)},[toggle])
     return (
         <div className={`${toggle? "bg-white text-black":"bg-black text-slate-600"}`}>
            
