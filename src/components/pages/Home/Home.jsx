@@ -7,7 +7,7 @@ import Services from "../../Services/Services";
 
 
 
-const Home = () => {
+const Home = ({setToggle,toggle}) => {
     const[cars,setCars]=useState([])
     useEffect(()=>{
         fetch('/brands.json')
@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2 className="text-center font-Oxanium font-bold text-5xl lg:text-6xl mt-36 mb-20 max-w-6xl mx-auto">AVAILABLE BRANDS</h2>
+            <h2 className={`${toggle ? 'text-center font-Oxanium font-bold text-5xl lg:text-6xl mt-36 mb-20 max-w-6xl mx-auto ':"text-center font-Oxanium font-bold text-5xl lg:text-6xl mt-36 mb-20 max-w-6xl mx-auto "}`}>AVAILABLE BRANDS</h2>
            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 mb-64 place-items-center max-w-6xl mx-auto">
             {

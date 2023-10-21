@@ -1,18 +1,22 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {SiSpeedypage} from 'react-icons/si';
 import './Header.css'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import ToggleButton from 'react-toggle-button'
 
 
-const Header = () => {
+const Header = ({setToggle,toggle}) => {
     const {user,logOut}=useContext(AuthContext)
     const navigate=useNavigate()
+    // const [toggle,setToggle]=useState(true)
+
     const links=<>
       <li className="font-Oxanium font-semibold text-xl"><NavLink to='/'>Home</NavLink></li>
       <li className="font-Oxanium font-semibold text-xl"><NavLink to='/add'>Add Products</NavLink></li>
       <li className="font-Oxanium font-semibold text-xl"><NavLink to='cart'>My Cart</NavLink></li>
+      
       
       
     </>
@@ -31,9 +35,15 @@ const Header = () => {
         })
         .catch(error => console.error (error))
     }
+    const handleToggle=(e)=>{
+        setToggle(e)
+        console.log(e)
+
+
+    }
 
     return (
-        <div className="navbar header bg-slate-200 rounded-3xl mb-7 max-w-6xl mx-auto">
+        <div className={`${toggle?"navbar header bg-slate-200 rounded-3xl mb-7 max-w-6xl mx-auto text-black":"navbar header bg-slate-200 rounded-3xl mb-7 max-w-6xl mx-auto text-black"}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                 <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -51,6 +61,10 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-4 flex flex-col lg:flex-row md:flex-row">
+            
+            <input type="checkbox" className="toggle" onClick={()=>handleToggle(!toggle)} checked />
+                        {/* <div onClick={()=>handleToggle(!toggle)}><ToggleButton
+             /></div> */}
             {user?<><h2 className="focus-visible:">{`${user.displayName}`}</h2>
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 
