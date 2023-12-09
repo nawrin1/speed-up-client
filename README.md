@@ -11,6 +11,8 @@
     <img src="https://skillicons.dev/icons?i=css,html,tailwind,js,react,mongodb,nodejs,express,firebase,vercel" />
   </a>
 </p>
+
+<img src="https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white">
 ![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)
 
 
